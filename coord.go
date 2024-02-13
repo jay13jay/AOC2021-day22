@@ -1,24 +1,16 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"strconv"
 	"strings"
 )
 
-type coordRange struct {
-	on bool
-	x  [2]int
-	y  [2]int
-	z  [2]int
-}
-
 func getCoordRanges(line string) coordRange {
 	fields := strings.FieldsFunc(line, func(r rune) bool {
 		return r == ' ' || r == ',' || r == '.' || r == '=' // replace all the symbols we don't need with spaces
 	})
-	fmt.Printf("Whole Line: %v\n", fields) // Debug line
+	// fmt.Printf("Whole Line: %v\n", fields) // Debug line
 
 	var coords coordRange
 
@@ -59,6 +51,7 @@ func getCoordRanges(line string) coordRange {
 		z1,
 		z2,
 	}
+	// fmt.Printf("Coords var:\t %v\n", coords)
 	return coords
 
 }

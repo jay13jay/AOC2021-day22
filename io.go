@@ -17,6 +17,7 @@ func readFile() []string {
 
 	var lines []string
 
+	// Loop over the file line by line, storing it in the lines slice
 	for f.Scan() {
 		lines = append(lines, f.Text())
 	}
